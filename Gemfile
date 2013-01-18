@@ -29,9 +29,10 @@ end
 
 gem 'jquery-rails'
 
+gem 'rspec-rails', :group => [:development, :test]
+
 group :test do 
  gem 'cucumber-rails'
- gem 'rspec-rails'
  gem 'database_cleaner'
  gem 'factory_girl'
 end

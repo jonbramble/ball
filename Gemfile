@@ -34,8 +34,9 @@ gem 'rspec-rails', :group => [:development, :test]
 group :test do 
  gem 'cucumber-rails'
  gem 'database_cleaner'
- gem 'factory_girl_rails'
 end
+
+gem 'factory_girl_rails', :group => [:production, :test]
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

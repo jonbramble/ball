@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require Rails.root.join('spec','factories','factories.rb')
+
+User.delete_all
+
+u = FactoryGirl.build(:user)
+u.save! 

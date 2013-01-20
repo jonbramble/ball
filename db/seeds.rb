@@ -6,9 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#require Rails.root.join('spec','factories','factories.rb')
-
 User.delete_all
 
-u = FactoryGirl.build(:user)
-u.save! 
+seed_file = File.join(Rails.root, 'db', 'users.yml')
+config = YAML::load_file(seed_file)
+
+config['users'].each do |user|
+
+ u = User.new(
+  :email => user['email'], :password => user['password']
+ )
+ u.save!
+
+end

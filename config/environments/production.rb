@@ -3,6 +3,20 @@ Ball::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'astburyball2013.info' }
 
+  config.action_mailer.perform_deliveries = true 
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address 			=> "auth.smtp.1and1.co.uk",
+    :port                 		=> 587,
+    :domain               	=> 'biomagnets.org.uk',
+    :user_name            	=> 'no-reply@biomagnets.org.uk',
+    :password             	=> ENV['1_AND_1_PASSWORD'],
+    :authentication       	=> :plain,
+    :enable_starttls_auto => true  
+  }
+
   # Code is not reloaded between requests
   config.cache_classes = true
 

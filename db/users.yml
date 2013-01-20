@@ -3,6 +3,6 @@ users:
    name: Jonathan Bramble 
    password: initpass12345
 
-# - email: js08mlh@leeds.ac.uk  
-#   name: Megan Hughes 
-#   password: initpass54321
+ - email: js08mlh@leeds.ac.uk  
+   name: Megan Hughes 
+   password: initpass54321

@@ -14,7 +14,7 @@ config = YAML::load_file(seed_file)
 config['users'].each do |user|
 
  u = User.new(
-  :email => user['email'], :password => user['password']
+  :email => user['email'], :password => user['password'], :admin => user['admin']
  )
  u.save!
 

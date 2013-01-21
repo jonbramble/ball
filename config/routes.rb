@@ -1,6 +1,6 @@
 Ball::Application.routes.draw do
   devise_for :users
-  devise_for :admins, :class_name => "User"
+  #devise_for :admins, :class_name => "User"
 
   namespace :admins do 
 	resources :users

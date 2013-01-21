@@ -2,7 +2,9 @@ users:
  - email: j.p.bramble@leeds.ac.uk  
    name: Jonathan Bramble 
    password: initpass12345
+   admin: true
 
  - email: js08mlh@leeds.ac.uk  
    name: Megan Hughes 
    password: initpass54321
+   admin: true

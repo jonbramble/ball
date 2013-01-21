@@ -10,6 +10,12 @@ def create_user
  @user = FactoryGirl.create(:user, email: @visitor[:email])
 end
 
+def create_admin_user
+ create_visitor
+ #delete_user
+ @user = FactoryGirl.create(:user, email: @visitor[:email], admin: true)
+end
+
 def sign_in
  fill_in "user_email", :with => @visitor[:email]
  fill_in "user_password", :with => @visitor[:password]
@@ -20,6 +26,10 @@ end
 
 Given /^I am a user$/ do
   create_user
+end
+
+Given /^I am an admin$/ do
+  create_admin_user
 end
 
 Given /^I am logged in$/ do
@@ -109,6 +119,18 @@ end
 Then /^no sign in link$/ do
   page.should_not have_xpath(".//a[contains(@href,'/users/sign_in')]")
 end
+
+Then /^I should see an admin area link$/ do
+  page.should have_xpath(".//a[contains(@href,'/admins/users')]")
+end
+
+Then /^I should not see an admin area link$/ do
+  page.should_not have_xpath(".//a[contains(@href,'/admins/users')]")
+end
+
+
+
+
 
 
 

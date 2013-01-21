@@ -23,7 +23,7 @@ Given /^I am a user$/ do
 end
 
 Given /^I am logged in$/ do
-  step "I visit the login page"
+  visit '/users/sign_in'
   create_user
   sign_in
 end
@@ -43,7 +43,7 @@ When /^I sign out$/ do
 end
 
 When /^I return to the site$/ do
-  step "I visit the site"
+  visit root_path
 end
 
 When /^enter no password$/ do
@@ -97,6 +97,19 @@ end
 Then /^I should see a signed out message$/ do
   page.should have_content "Signed out successfully."
 end
+
+Then /^I should see a sign in link$/ do
+  page.should have_xpath(".//a[contains(@href,'/users/sign_in')]")
+end
+
+Then /^I should see a sign out link$/ do
+  page.should have_xpath(".//a[contains(@href,'/users/sign_out')]")
+end
+
+Then /^no sign in link$/ do
+  page.should_not have_xpath(".//a[contains(@href,'/users/sign_in')]")
+end
+
 
 
 

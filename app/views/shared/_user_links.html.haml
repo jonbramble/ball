@@ -1,0 +1,6 @@
+- unless current_user
+ %a
+  = link_to "Sign in", new_user_session_path
+- else
+ %a 
+  = link_to "Sign out", destroy_user_session_path, :method=>:delete

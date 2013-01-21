@@ -1,0 +1,19 @@
+common: &common
+  adapter: postgresql
+  username: <%= ENV['PHYS_LOCALHOST_USERNAME'] %>
+  password: <%= ENV['PHYS_LOCALHOST_PASSWORD'] %>
+
+development:
+  <<: *common
+  database: ball_development
+
+test: &test
+  <<: *common
+  database: ball_test
+
+production:
+  <<: *common
+  database: ball_production
+
+cucumber:
+  <<: *test

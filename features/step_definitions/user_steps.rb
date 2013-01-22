@@ -48,6 +48,10 @@ When /^I visit the login page$/ do
   visit '/users/sign_in'
 end
 
+When /^I visit the admin page$/ do
+  visit '/admin/users'
+end
+
 When /^I sign out$/ do
   visit '/users/sign_out'
 end
@@ -121,12 +125,21 @@ Then /^no sign in link$/ do
 end
 
 Then /^I should see an admin area link$/ do
-  page.should have_xpath(".//a[contains(@href,'/admins/users')]")
+  page.should have_xpath(".//a[contains(@href,'/admin/users')]")
 end
 
 Then /^I should not see an admin area link$/ do
-  page.should_not have_xpath(".//a[contains(@href,'/admins/users')]")
+  page.should_not have_xpath(".//a[contains(@href,'/admin/users')]")
 end
+
+Then /^I should see the admin page$/ do
+  current_path.should eql('/admin/users')
+end
+
+Then /^I should not see the admin page$/ do
+  current_path.should_not eql('/admin/users')
+end
+
 
 
 

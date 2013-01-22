@@ -1,26 +1,3 @@
-### Utility methods ###
-
-def create_visitor
- @visitor ||={ :name => "Tester", :email=> "atester@example.com", :password => "auserpass", :password_confirmation => "auserpass" }
-end
-
-def create_user
- create_visitor
- #delete_user
- @user = FactoryGirl.create(:user, email: @visitor[:email])
-end
-
-def create_admin_user
- create_visitor
- #delete_user
- @user = FactoryGirl.create(:user, email: @visitor[:email], admin: true)
-end
-
-def sign_in
- fill_in "user_email", :with => @visitor[:email]
- fill_in "user_password", :with => @visitor[:password]
- click_button "Sign in"
-end
 
 ## Given ## 
 
@@ -29,12 +6,13 @@ Given /^I am a user$/ do
 end
 
 Given /^I am an admin$/ do
-  create_admin_user
+  create_admin
 end
 
-Given /^I am logged in$/ do
+Given /^I am a signed in "([^"]*)"$/ do |type|
   visit '/users/sign_in'
-  create_user
+  method = "create_"+type
+  eval(method)
   sign_in
 end
 
@@ -54,6 +32,10 @@ end
 
 When /^I sign out$/ do
   visit '/users/sign_out'
+end
+
+When /^I visit new users page$/ do
+  visit '/admin/users/new'
 end
 
 When /^I return to the site$/ do
@@ -138,6 +120,23 @@ end
 
 Then /^I should not see the admin page$/ do
   current_path.should_not eql('/admin/users')
+end
+
+Then /^I should see a table of all users$/ do
+  current_path.should eql('/admin/users')
+  page.should have_selector('table') #pretty bad method of determining this
+  page.should have_selector('td', :text => @user[:email])
+  page.should have_selector('td', :text => @user[:name])
+end
+
+
+Then /^I should see an add users link$/ do
+  current_path.should eql('/admin/users')
+  page.should have_xpath(".//a[contains(@href,'/admin/users/new')]")
+end
+
+Then /^I should see an new user form$/ do
+  page.should have_selector('form')
 end
 
 

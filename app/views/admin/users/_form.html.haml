@@ -1,0 +1,19 @@
+= form_for([:admin, @user]) do |f|
+ = field_set_tag nil, :class => 'input' do
+  -if @user.errors.any?
+   #error_explanation
+    %h3
+     = pluralize(@user.errors.count, "error") 
+     prohibited this user from being saved:
+    = @user.errors.each do |attribute, error_array|
+     %h4 
+      ="#{attribute}"+"#{error_array}"
+
+  = f.label :name
+  = f.text_field :name
+
+  = f.label :email
+  = f.text_field :email
+
+
+  = f.submit

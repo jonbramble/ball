@@ -5,9 +5,13 @@ Ball::Application.routes.draw do
 
   namespace :admin do 
 	resources :users
+	#resources :meals
   end 
 
   get "home/index"
+
+  match 'home/' => 'home#index'
+  match 'admin/' => 'admin/users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

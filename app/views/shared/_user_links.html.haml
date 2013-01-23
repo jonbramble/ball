@@ -4,3 +4,6 @@
 - else
  %a 
   = link_to "Sign out", destroy_user_session_path, :method=>:delete
+ %h3
+  = current_user.name
+ 

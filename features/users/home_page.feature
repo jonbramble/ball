@@ -13,6 +13,12 @@ Feature: Home page links
 	Then I should see a sign out link
 	And no sign in link
 
+  Scenario: Name on home page
+	Given I am a user
+	When I visit the login page
+	And enter valid login credentials
+	Then I should see my name
+
   Scenario: Login link as normal user
 	Given I am a user
 	When I visit the login page

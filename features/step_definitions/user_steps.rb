@@ -139,6 +139,11 @@ Then /^I should see an new user form$/ do
   page.should have_selector('form')
 end
 
+Then /^I should see my name$/ do
+  page.should have_content "#{@user.name}"
+end
+
+
 
 
 

@@ -9,13 +9,12 @@
 User.delete_all
 
 seed_file = File.join(Rails.root, 'db', 'users.yml')
-config = YAML::load_file(seed_file)
+config = YAML::load(ERB.new(File.read(seed_file)).result)
 
 config['users'].each do |user|
-
  u = User.new(
   :email => user['email'], :password => user['password'], :admin => user['admin'], :name =>user['name']
- )
- u.save!
+)
+u.save!
 
 end

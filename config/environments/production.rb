@@ -1,6 +1,8 @@
 Ball::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+
   config.action_mailer.default_url_options = { :host => 'astburyball2013.info' }
 
   config.action_mailer.perform_deliveries = true 

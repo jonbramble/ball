@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.11'
 
@@ -6,10 +7,11 @@ gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'figaro'
 gem 'thin'
+
+# aws
+gem "asset_sync"
 
 # Gems used only for assets and not required
 # in production environments by default.

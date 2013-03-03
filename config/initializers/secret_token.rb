@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Ball::Application.config.secret_token = '26ec3d74a0e66f9d590d8a36e82067f0c1c67c55d50da0b188cefb016c1bdf8d85e7ad0b3524b089b39134a4471fa3ae1afcc058d547fe00716551303b42c920'
+Ball::Application.config.secret_token = '9a3a65155a14c9b045d854be34c42c48c66a87bd7f6bba292a2d99c157b72f92cb03ba6ff60a1323af21633134e2736eeee0d8493dc2498aac2583bc5ee8baff'

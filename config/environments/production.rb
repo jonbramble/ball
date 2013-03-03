@@ -38,6 +38,9 @@ Ball::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Allow compilation of assests on Heroku
+  config.assets.initialize_on_precompile = false
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

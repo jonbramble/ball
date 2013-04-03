@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'haml'
@@ -9,6 +9,9 @@ gem 'haml-rails'
 gem 'devise'
 gem 'figaro'
 gem 'thin'
+
+gem 'strong_parameters'		# remove when upto 4.
+gem 'turbolinks'
 
 # aws
 gem "asset_sync"
@@ -21,7 +24,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-   gem 'zurb-foundation', '~> 4.0.0'
+   gem 'zurb-foundation'
 end
 
 gem 'jquery-rails'

@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.panel.rep{
+ padding: 0px;
+ border: none;
+ overflow: hidden;
+}
+
+.panel.rep .img{
+ display: block;
+ float: left;
+ padding-top: 0;
+ padding-left: 0;
+ width: 30%;
+}
+
+.panel.rep>div {
+ width: 70%;
+ float: left;
+ padding-left: 14px;
+ padding-right: 14px;
+ background-color: #a9014b;
+ p {
+   color: white;
+ }
+ 
+}

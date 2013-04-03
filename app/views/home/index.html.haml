@@ -1,10 +1,40 @@
 =content_for :title do
   Astbury Ball 2013
 
-%h1 Astbury Ball 2013
+.row
+  .small-8.large-6.columns
+    %h1 Astbury May Ball
+  .large-offset-4.small-offset-0.large-2.small-4.columns
+    = render :partial => "shared/user_links"
+    = render :partial => "shared/admin_links"
 
-= render :partial => "shared/user_links"
-= render :partial => "shared/admin_links"
+.row
+  .small-10.large-6.columns
+    %p The Astbury Society invites you to attend a black tie  event:
+.row
+  .small-10.large-6.columns
+    %p Venue: The Park Plaza Hotel
+.row
+  .small-10.large-6.columns
+    %p Date: 10th May 2013
+    %p Time: 7:00pm
+.row
+  .small-10.large-6.columns
+    %p Price: £30
+.row
+  .small-10.large-6.columns
+    %p Evening includes: a three course meal, half a bottle of wine or soft drink and entertainment.
+.row
+  .small-10.large-6.columns
+    %p Buy tickets from your nearest society member:
+
+.row
+  =render :partial => "shared/rep", :locals => { :image => "megan.png", :name => "Megan"}
+  =render :partial => "shared/rep", :locals => { :image => "sasha.png", :name => "Sasha"}
+  =render :partial => "shared/rep", :locals => { :image => "sasha.png", :name => "Sasha"}
+
+ 
+
 
 
 

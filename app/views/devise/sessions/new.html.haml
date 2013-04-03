@@ -1,0 +1,25 @@
+%h2 Sign in
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  .row
+    .large-4.columns
+      = content_tag(:div, flash[:error], :id => "flash_error", :class=>"alert-box alert") if flash[:error] 
+      = content_tag(:div, flash[:notice], :id => "flash_notice", :class=>"alert-box success") if flash[:notice]
+      = content_tag(:div, flash[:alert], :id => "flash_alert", :class=>"alert-box alert") if flash[:alert]
+  .row
+    .large-4.columns
+      = label resource_name, :email
+      = email_field resource_name, :email, :autofocus => true
+  .row
+    .large-4.columns
+      = label resource_name, :password
+      = password_field resource_name, :password
+  .row
+    .large-4.columns
+      = f.submit "Sign in" ,:class=>"button inline"
+  %br/
+  .row
+    .large-4.columns
+      = render "devise/shared/links"
+
+
+

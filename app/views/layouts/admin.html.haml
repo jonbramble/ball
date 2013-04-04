@@ -22,16 +22,11 @@
   = javascript_include_tag "vendor/custom.modernizr"
   = csrf_meta_tag
 
-%body#pretty
-  #container.row
+%body
+  .row
     .small-12.large-12.columns
+      = render :partial => "shared/admin_header_mast"
       = yield
 
-  %footer.row
-    .large-12.columns
-      .row
-        .large-6.columns
-          %p Website by Jonathan Bramble
-    
 
   = javascript_include_tag "application"

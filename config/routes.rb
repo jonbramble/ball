@@ -1,4 +1,8 @@
 Ball::Application.routes.draw do
+
+  get "home/index"
+  get "users/show"
+
   devise_for :users
   #devise_for :admins, :class_name => "User"
 
@@ -6,8 +10,6 @@ Ball::Application.routes.draw do
 	resources :users
 	#resources :meals
   end 
-
-  get "home/index"
 
   match 'home/' => 'home#index'
   match 'admin/' => 'admin/users#index'

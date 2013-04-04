@@ -1,9 +1,11 @@
 - unless current_user
-  %p
-    = current_user.name
   %a
     = link_to "Sign in", new_user_session_path
 - else
+  %p
+    = current_user.name
   %a 
     = link_to "Sign out", destroy_user_session_path, :method=>:delete
+
+
  

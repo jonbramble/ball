@@ -5,8 +5,9 @@
   .small-8.large-6.columns
     %h1 Astbury May Ball
   .large-offset-4.small-offset-0.large-2.small-4.columns
-    = render :partial => "shared/user_links"
-    = render :partial => "shared/admin_links"
+    .sign-in
+      = render :partial => "shared/user_links"
+      = render :partial => "shared/admin_links"
 
 .row
   .small-10.large-6.columns
@@ -31,8 +32,18 @@
 .row
   =render :partial => "shared/rep", :locals => { :image => "megan.png", :name => "Megan"}
   =render :partial => "shared/rep", :locals => { :image => "sasha.png", :name => "Sasha"}
-  =render :partial => "shared/rep", :locals => { :image => "sasha.png", :name => "Sasha"}
-
+  =render :partial => "shared/rep", :locals => { :image => "jenny.png", :name => "Jenny"}
+  =render :partial => "shared/rep", :locals => { :image => "joe.png", :name => "Joe"}
+.row
+  =render :partial => "shared/rep", :locals => { :image => "sophie.png", :name => "Sophie"}
+  =render :partial => "shared/rep", :locals => { :image => "kat.png", :name => "Kat"}
+  =render :partial => "shared/rep", :locals => { :image => "rachel.png", :name => "Rachel"}
+  =render :partial => "shared/rep", :locals => { :image => "ivona.png", :name => "Ivona"}
+.row
+  =render :partial => "shared/rep", :locals => { :image => "pete.png", :name => "Pete"}
+  =render :partial => "shared/rep", :locals => { :image => "claire.png", :name => "Claire"}
+  =render :partial => "shared/rep", :locals => { :image => "valeria.png", :name => "Valeria"}
+  .small-6.large-3.columns
  
 
 

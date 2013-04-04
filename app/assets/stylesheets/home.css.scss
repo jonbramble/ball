@@ -2,11 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.sign-in {
+ padding-top: 10px;
+}
+
 
 .panel.rep{
- padding: 0px;
- border: none;
+ position: relative;
+ height: 100%;
+ padding: 0;
  overflow: hidden;
+ //background-color: #A9014B;
+ background-color: #D4367B;
+ margin-bottom: 0;
+ margin-top: 9px;
 }
 
 .panel.rep .img{
@@ -19,12 +28,12 @@
 
 .panel.rep>div {
  width: 70%;
+ height: 100%;
  float: left;
  padding-left: 14px;
  padding-right: 14px;
- background-color: #a9014b;
+ padding-top: 10px;
  p {
-   color: white;
+  font-weight: bold;
  }
- 
 }

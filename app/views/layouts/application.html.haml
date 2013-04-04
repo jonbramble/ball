@@ -23,8 +23,15 @@
   = csrf_meta_tag
 
 %body
-  .row
+  #container.row
     .small-12.large-12.columns
       = yield
+
+  %footer.row
+    .large-12.columns
+      .row
+        .large-6.columns
+          %p Website by Jonathan Bramble
+    
 
   = javascript_include_tag "application"

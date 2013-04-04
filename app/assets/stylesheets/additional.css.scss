@@ -1,0 +1,15 @@
+#container {
+ min-height: 750px;
+}
+
+$footer-height: 50px;
+
+footer {
+ height: $footer-height;
+ 
+ background: #bbc;
+ p {
+   color: #ffffff;
+   line-height: $footer-height;
+ }
+}

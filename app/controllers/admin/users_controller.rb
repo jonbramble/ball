@@ -84,6 +84,10 @@ class Admin::UsersController < ApplicationController
 
 	respond_to do |format|
       	  format.html
+          format.pdf do
+            pdf = SummaryFormPdf.new(@users, @veg_count, @guest_count, @coffee_count)
+            send_data pdf.render, filename: "summary.pdf", type: "application/pdf", dispostion: "inline"
+          end
     	end
 
   end

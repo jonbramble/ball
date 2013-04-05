@@ -10,6 +10,8 @@ gem 'devise'
 gem 'figaro'
 gem 'thin'
 
+gem 'prawn'
+
 gem 'strong_parameters'		# remove when upto 4.
 gem 'turbolinks'
 

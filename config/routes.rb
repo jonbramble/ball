@@ -1,14 +1,16 @@
 Ball::Application.routes.draw do
 
   get "home/index"
-  get "users/show"
 
   devise_for :users
   #devise_for :admins, :class_name => "User"
 
+  resources :users, :only => [:show] do
+    resources :meals
+  end
+
   namespace :admin do 
 	resources :users
-	#resources :meals
   end 
 
   match 'home/' => 'home#index'

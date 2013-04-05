@@ -28,7 +28,11 @@ class Admin::UsersController < ApplicationController
 
   def create
     password = Devise.friendly_token.first(10)
-    @user = User.new(params[:user].merge(:password => password))
+    @user = User.new(user_params)
+
+    @user.password = password
+
+    @user.build_meal
      
     respond_to do |format|
       if @user.save
@@ -60,5 +64,9 @@ class Admin::UsersController < ApplicationController
    unless current_user.admin
 	redirect_to root_path, :alert => "You are not an admin"
    end
+  end
+
+  def user_params
+   params.require(:user).permit(:name,:email)
   end
 end

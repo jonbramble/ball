@@ -12,9 +12,10 @@ seed_file = File.join(Rails.root, 'db', 'users.yml')
 config = YAML::load(ERB.new(File.read(seed_file)).result)
 
 config['users'].each do |user|
- u = User.new(
-  :email => user['email'], :password => user['password'], :admin => user['admin'], :name =>user['name']
-)
-u.save!
+ 
+ raw_parameters = {:email => user['email'], :password => user['password'], :admin => user['admin'], :name =>user['name']}
+ parameters = ActionController::Parameters.new(raw_parameters)
+ user = User.create(parameters.permit(:email,:password,:admin,:name))
+ user.create_meal
 
 end

@@ -8,5 +8,4 @@
 
 .row
   .small-10.large-6.columns
-    %a.button
-      Enter your meal choices
+    = link_to "Edit your meal choices", edit_user_meal_path(current_user), :class => "button"

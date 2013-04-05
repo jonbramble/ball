@@ -5,6 +5,11 @@ class UserMailer < ActionMailer::Base
     @user = user
     @password = password
     @url = 'http://www.astburyball2013.info/users/sign_in'
-    mail(:to => user.email, :subject => "Welcome Test Mail")
+    mail(:to => user.email, :subject => "Astbury Ball 2013")
+  end
+
+  def update_meal(user)
+    @user = user
+    mail(:to => user.email, :subject => "Astbury Ball - Meal Choices Updated")
   end
 end

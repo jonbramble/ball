@@ -1,19 +1,39 @@
-= form_for([:admin, @user]) do |f|
- = field_set_tag nil, :class => 'input' do
-  -if @user.errors.any?
-   #error_explanation
-    %h3
-     = pluralize(@user.errors.count, "error") 
-     prohibited this user from being saved:
-    = @user.errors.each do |attribute, error_array|
-     %h4 
-      ="#{attribute}"+"#{error_array}"
 
-  = f.label :name
-  = f.text_field :name
+= form_for [:admin, @user] do |f|
+  .row        
+    .large-4.columns
+      = render :partial => "shared/alert_block"
 
-  = f.label :email
-  = f.text_field :email
+  .row
+    .large-4.small-6.columns
+      = f.label :name
+      = f.text_field :name
+
+  .row
+    .large-4.small-6.columns
+      = f.label :email
+      = f.text_field :email
+
+  .row
+    .large-4.small-6.columns
+      = f.label :admin do
+        = f.check_box :admin
+        %span
+          Admin
+
+  .row
+    .large-4.columns
+      = f.label :admin_only do
+        = f.check_box :admin_only
+        %span
+          Admin Only (Not a guest)
+
+  .row
+    .large-4.small-6.columns
+      = f.submit :class => "button"
 
 
-  = f.submit
+
+
+
+

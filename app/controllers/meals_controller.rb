@@ -16,7 +16,6 @@ class MealsController < ApplicationController
    if @meal.update_attributes(meal_params)
       UserMailer.update_meal(current_user).deliver
       redirect_to user_path(current_user), :notice => 'Your meal options were successfully updated.'
-
    else
       render :action => 'edit'
    end

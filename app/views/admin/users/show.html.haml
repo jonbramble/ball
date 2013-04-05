@@ -1,0 +1,47 @@
+.row
+  .large-6.columns
+    %h5 
+      = @user.name
+    %p 
+      Email: 
+      = @user.email
+    %p 
+      Admin: 
+      = true_false_icon(@user.admin)
+
+.row
+  .large-6.columns
+    %p 
+      Admin only (not a guest): 
+      = true_false_icon(@user.admin_only)
+
+
+- if @user.chosen #|| @user.admin_only
+  .row
+    .large-6.columns
+      %h6 Menu
+      %p 
+        Vegetarian:
+        =  true_false_icon(@meal.vegetarian)
+      %p 
+        Coffee:
+        =  true_false_icon(@meal.coffee)
+      %p 
+        Wine:
+        = @meal.wine
+      %p 
+        Allergies:
+        = @meal.allergies
+- else
+  .row
+    .large-6.columns
+      %p
+        No Meal Chosen
+
+.row
+  .large-6.columns
+    = link_to "Back", admin_users_path
+
+
+
+

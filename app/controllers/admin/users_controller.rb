@@ -4,7 +4,16 @@ class Admin::UsersController < ApplicationController
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
   def index
-	@users = User.find(:all)
+	@users = User.where(:admin_only => :false)
+        @admin_users = User.where(:admin => :true)
+	respond_to do |format|
+		format.html
+	end
+  end
+
+  def show
+       @user = User.find(params[:id])
+       @meal = @user.meal
 	respond_to do |format|
 		format.html
 	end
@@ -31,7 +40,6 @@ class Admin::UsersController < ApplicationController
     @user = User.new(user_params)
 
     @user.password = password
-
     @user.build_meal
      
     respond_to do |format|
@@ -46,7 +54,14 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-	# must to this
+	@user = User.find(params[:id])
+
+         if @user.update_attributes(user_params)
+            redirect_to admin_users_path, :notice => 'You have sucessfully added a guest.'
+        else
+          render :action => 'edit'
+        end
+
   end
 
   def destroy
@@ -62,9 +77,11 @@ class Admin::UsersController < ApplicationController
 	@users = User.includes(:meal).where(:admin_only => :false)
 
 	@veg_count = Meal.where(:vegetarian => :true).count
-	@user_count = User.where(:admin_only => :false).count
+	@guest_count = User.where(:admin_only => :false).count
+
+        @chosen_count = User.where(:chosen => :true).count
         @coffee_count = Meal.where(:coffee => :true).count
-	
+
 	respond_to do |format|
       	  format.html
     	end
@@ -75,11 +92,11 @@ class Admin::UsersController < ApplicationController
 
   def authenticate_admin!
    unless current_user.admin
-	redirect_to root_path, :alert => "You are not an admin"
+	redirect_to root_path, :alert => "You are not an admin go away"
    end
   end
 
   def user_params
-   params.require(:user).permit(:name,:email)
+       params.require(:user).permit(:name,:email,:admin, :admin_only)
   end
 end

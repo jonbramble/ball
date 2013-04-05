@@ -1,5 +1,9 @@
 .row
   .large-12.columns  
+    %h5 Meals Summary
+
+.row
+  .large-12.columns  
     %table
       %tr
         %th 
@@ -13,16 +17,16 @@
         %tr
           %td
           %td= user.name
-          %td= user.chosen
-          %td= user.meal.vegetarian
-          %td= user.meal.coffee
+          %td= true_false_icon(user.chosen)
+          %td= true_false_icon(user.meal.vegetarian)
+          %td= true_false_icon(user.meal.coffee)
           %td= user.meal.wine
       %tr
         %td Totals
-        %td= @user_count
-        %td
+        %td= @guest_count
+        %td= @chosen_count
         %td= @veg_count
-        %td= @coffe_count
+        %td= @coffee_count
 .row
   .large-6.columns
     = link_to "Back", admin_users_path

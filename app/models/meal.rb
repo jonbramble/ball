@@ -2,7 +2,7 @@ class Meal < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
   #attr_accessible :allergies, :coffee, :vegetarian, :wine
  
-  belongs_to :user
+  belongs_to :user, :dependent => :destroy
 
   WINE = ["Red","White","No Preference"]  
 

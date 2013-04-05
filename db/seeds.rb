@@ -13,9 +13,9 @@ config = YAML::load(ERB.new(File.read(seed_file)).result)
 
 config['users'].each do |user|
  
- raw_parameters = {:email => user['email'], :password => user['password'], :admin => user['admin'], :name =>user['name']}
+ raw_parameters = {:email => user['email'], :password => user['password'], :admin => user['admin'], :name =>user['name'] , :admin_only => user['admin_only'] }
  parameters = ActionController::Parameters.new(raw_parameters)
- user = User.create(parameters.permit(:email,:password,:admin,:name))
+ user = User.create(parameters.permit(:email,:password,:admin,:name,:admin_only))
  user.create_meal
 
 end

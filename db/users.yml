@@ -3,8 +3,10 @@ users:
    name: "Jonathan Bramble" 
    password: <%= ENV['JON_PASS'] %>  
    admin: true
+   admin_only: true
 
  - email: <%= ENV['ADMIN_USER_MEGAN'] %>
    name: "Megan Hughes"
    password: <%= ENV['MEGAN_PASS'] %>  
    admin: true
+   admin_only: false

@@ -59,10 +59,11 @@ class Admin::UsersController < ApplicationController
   end
 
   def summary
-	@users = User.includes(:meal)
+	@users = User.includes(:meal).where(:admin_only => :false)
 
-	@veg_count = Meal.where("vegetarian",true).count
-	@user_count = User.count
+	@veg_count = Meal.where(:vegetarian => :true).count
+	@user_count = User.where(:admin_only => :false).count
+        @coffee_count = Meal.where(:coffee => :true).count
 	
 	respond_to do |format|
       	  format.html

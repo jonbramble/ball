@@ -17,6 +17,7 @@
       %tr
         %th Name
         %th Email
+        %th Chosen Meal
         %th
         %th
         %th
@@ -24,6 +25,7 @@
         %tr
           %td= user.name
           %td= user.email
+          %td= user.chosen
           %td= link_to 'Show', admin_user_path(user)
           %td= link_to 'Edit', edit_admin_user_path(user)
           %td= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete

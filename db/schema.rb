@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405141659) do
+ActiveRecord::Schema.define(:version => 20130405160828) do
 
   create_table "meals", :force => true do |t|
     t.text     "allergies"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20130405141659) do
     t.datetime "updated_at",                                :null => false
     t.string   "name"
     t.boolean  "admin",                  :default => false
+    t.boolean  "chosen",                 :default => false
+    t.boolean  "admin_only",             :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

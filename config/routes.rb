@@ -10,7 +10,11 @@ Ball::Application.routes.draw do
   end
 
   namespace :admin do 
-	resources :users
+	resources :users do
+	 collection do
+	  get 'summary'
+         end
+     end
   end 
 
   match 'home/' => 'home#index'

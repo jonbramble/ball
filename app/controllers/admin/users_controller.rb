@@ -46,7 +46,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-	
+	# must to this
   end
 
   def destroy
@@ -56,6 +56,18 @@ class Admin::UsersController < ApplicationController
     	respond_to do |format|
       	  format.html { redirect_to admin_users_path }
     	end
+  end
+
+  def summary
+	@users = User.includes(:meal)
+
+	@veg_count = Meal.where("vegetarian",true).count
+	@user_count = User.count
+	
+	respond_to do |format|
+      	  format.html
+    	end
+
   end
 
   private

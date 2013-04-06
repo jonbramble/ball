@@ -88,6 +88,16 @@ class Admin::UsersController < ApplicationController
             pdf = SummaryFormPdf.new(@users, @veg_count, @guest_count, @coffee_count)
             send_data pdf.render, filename: "summary.pdf", type: "application/pdf", dispostion: "inline"
           end
+
+          format.ods do
+	   ods = SummaryFormOds.new()
+	   ods.create_sheet(@users, @veg_count, @guest_count, @coffee_count)
+	   file = "#{::Rails.root}/tmp/summary_#{Process.pid}";
+	   if ods.write_file file
+	   send_file file,  filename: "my-spreadsheet.ods", type: "application/ods", dispostion: "inline"
+	  end
+          end
+
     	end
 
   end

@@ -11,6 +11,7 @@ gem 'figaro'
 gem 'thin'
 
 gem 'prawn'
+gem 'rodf'
 
 gem 'strong_parameters'		# remove when upto 4.
 gem 'turbolinks'

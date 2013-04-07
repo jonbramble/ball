@@ -1,5 +1,9 @@
 @import "foundation/foundation-global";
 
+html {
+ -webkit-font-smoothing: antialiased;
+}
+
 body#pretty {
  background: #f7f7f7 url(image_path('back_fuzz_flip.jpg')) top center no-repeat;
 }
@@ -18,19 +22,17 @@ body#pretty {
  }
 }
 
-
-
-
-
 .sign-in {
  padding-top: 10px;
  a { 
   font-size: 0.8em;
-
   }
+
+ a.user_name {
+  display: block;
+  font-size: 1em;
+ }
 }
-
-
 
 $footer-height: 50px;
 
@@ -44,5 +46,35 @@ footer {
    font-size: 0.8em;
  }
 }
+
+.menu-form {
+ span {
+  font-size: 0.8em
+ }
+
+}
+
+.menu .menu-choice {
+  padding-top: 0.6em;
+  margin-bottom: 0.6em;
+  background: rgb(170,170,170);
+  background: rgba(170,170,170,0.2);
+  p {
+   font-size: 0.8em;
+   min-height: 40px;
+  }
+}
+
+@media #{$small} { 
+ .menu .menu-choice:first-child  {
+  margin-bottom: 0em;
+ }
+}
+
+.small-vgap {
+  margin-bottom: 0.2em;
+ }
+
+
 
 

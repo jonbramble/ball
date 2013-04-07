@@ -4,11 +4,11 @@
   .small-10.large-6.columns
     %p 
       Hello 
-      = current_user.name
+      = @user.name
 
 .row
   .small-10.large-6.columns
-    - if current_user.chosen
-      = link_to "Edit your meal choices", edit_user_meal_path(current_user), :class => "button"
+    - if @user.chosen
+      = link_to "Edit your meal choices", edit_user_meal_path(@user), :class => "button"
     - else
-      = link_to "Enter your meal choices", edit_user_meal_path(current_user), :class => "button"
+      = link_to "Enter your meal choices", edit_user_meal_path(@user), :class => "button"

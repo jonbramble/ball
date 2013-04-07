@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.delete_all
+Meal.delete_all
 
 seed_file = File.join(Rails.root, 'db', 'users.yml')
 config = YAML::load(ERB.new(File.read(seed_file)).result)

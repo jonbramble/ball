@@ -3,6 +3,7 @@ class Admin::UsersController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
+
   def index
 	@users = User.where(:admin_only => :false)
         @admin_users = User.where(:admin => :true)

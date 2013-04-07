@@ -1,10 +1,36 @@
+@import "foundation/foundation-global";
+
 body#pretty {
  background: #f7f7f7 url(image_path('back_fuzz_flip.jpg')) top center no-repeat;
 }
 
 #container {
- min-height: 750px;
+  //margin-bottom: 20px;
+ } 
+
+.people {
+  margin-bottom: 20px;
 }
+
+@media #{$small} { 
+ .people {
+  margin-bottom: 0px;
+ }
+}
+
+
+
+
+
+.sign-in {
+ padding-top: 10px;
+ a { 
+  font-size: 0.8em;
+
+  }
+}
+
+
 
 $footer-height: 50px;
 
@@ -15,6 +41,7 @@ footer {
  p {
    color: #ffffff;
    line-height: $footer-height;
+   font-size: 0.8em;
  }
 }
 

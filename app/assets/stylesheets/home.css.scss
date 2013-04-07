@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.sign-in {
- padding-top: 10px;
-}
-
 .panel.rep{
  position: relative;
  height: 100%;
@@ -34,5 +30,8 @@
  padding-top: 10px;
  p {
   font-weight: bold;
+  margin-bottom: 0px;
  }
 }
+
+

@@ -547,64 +547,6 @@
 .foundicon-search:before {
   content: "\f02e";
 }
-/* line 1, ../../app/assets/stylesheets/additional.css.scss */
-body#pretty {
-  background: #f7f7f7 url("/assets/back_fuzz_flip.jpg") top center no-repeat;
-}
-
-/* line 5, ../../app/assets/stylesheets/additional.css.scss */
-#container {
-  min-height: 750px;
-}
-
-/* line 11, ../../app/assets/stylesheets/additional.css.scss */
-footer {
-  height: 50px;
-  background: #bbc;
-}
-/* line 15, ../../app/assets/stylesheets/additional.css.scss */
-footer p {
-  color: #ffffff;
-  line-height: 50px;
-}
-/* line 5, ../../app/assets/stylesheets/home.css.scss */
-.sign-in {
-  padding-top: 10px;
-}
-
-/* line 9, ../../app/assets/stylesheets/home.css.scss */
-.panel.rep {
-  position: relative;
-  height: 100%;
-  padding: 0;
-  overflow: hidden;
-  background-color: #D4367B;
-  margin-bottom: 0;
-  margin-top: 9px;
-}
-
-/* line 20, ../../app/assets/stylesheets/home.css.scss */
-.panel.rep .img {
-  display: block;
-  float: left;
-  padding-top: 0;
-  padding-left: 0;
-  width: 30%;
-}
-
-/* line 28, ../../app/assets/stylesheets/home.css.scss */
-.panel.rep > div {
-  width: 70%;
-  height: 100%;
-  float: left;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 10px;
-}
-/* line 35, ../../app/assets/stylesheets/home.css.scss */
-.panel.rep > div p {
-  font-weight: bold;
-}
 /* line 4, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/zurb-foundation-4.1.1/scss/foundation/components/_global.scss */
 *,
 *:before,
@@ -6151,4 +6093,74 @@ table tfoot tr td {
 /* line 1, ../../app/assets/stylesheets/foundicon_override.css.scss */
 [class*="gen-enclosed foundicon-"]::before {
   font-family: "GeneralEnclosedFoundicons";
+}
+/* line 3, ../../app/assets/stylesheets/additional.css.scss */
+body#pretty {
+  background: #f7f7f7 url("/assets/back_fuzz_flip.jpg") top center no-repeat;
+}
+
+/* line 11, ../../app/assets/stylesheets/additional.css.scss */
+.people {
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 48em) {
+  /* line 16, ../../app/assets/stylesheets/additional.css.scss */
+  .people {
+    margin-bottom: 0px;
+  }
+}
+/* line 25, ../../app/assets/stylesheets/additional.css.scss */
+.sign-in {
+  padding-top: 10px;
+}
+/* line 27, ../../app/assets/stylesheets/additional.css.scss */
+.sign-in a {
+  font-size: 0.8em;
+}
+
+/* line 37, ../../app/assets/stylesheets/additional.css.scss */
+footer {
+  height: 50px;
+  background: #bbc;
+}
+/* line 41, ../../app/assets/stylesheets/additional.css.scss */
+footer p {
+  color: #ffffff;
+  line-height: 50px;
+  font-size: 0.8em;
+}
+/* line 5, ../../app/assets/stylesheets/home.css.scss */
+.panel.rep {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  background-color: #D4367B;
+  margin-bottom: 0;
+  margin-top: 9px;
+}
+
+/* line 16, ../../app/assets/stylesheets/home.css.scss */
+.panel.rep .img {
+  display: block;
+  float: left;
+  padding-top: 0;
+  padding-left: 0;
+  width: 30%;
+}
+
+/* line 24, ../../app/assets/stylesheets/home.css.scss */
+.panel.rep > div {
+  width: 70%;
+  height: 100%;
+  float: left;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 10px;
+}
+/* line 31, ../../app/assets/stylesheets/home.css.scss */
+.panel.rep > div p {
+  font-weight: bold;
+  margin-bottom: 0px;
 }

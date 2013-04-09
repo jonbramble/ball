@@ -25,7 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'zurb-foundation'
-  #gem "asset_sync"  # aws
+  gem "asset_sync"  # aws
   gem 'turbo-sprockets-rails3'
 end
 

@@ -3,14 +3,14 @@ Feature: Sign In
 	Scenario: User visits the website
 		When I visit the site
 		Then I should see the home page
-		And I should see the title "Astbury Ball 2013"
+		And I should see the title "Astbury May Ball 2013"
 
 	Scenario: User views login page
 		Given I am a user
 		When I visit the login page
 		And enter valid login credentials
 		Then I should see the home page
-  		And I should see the title "Astbury Ball 2013"
+  		And I should see the title "Astbury May Ball 2013"
 
 	Scenario: User enters incorrect password
 		Given I am a user

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   include ActiveModel::ForbiddenAttributesProtection
 
-  has_one :meal 
+  has_one :meal, :dependent => :destroy 
 
 
   # Include default devise modules. Others available are:

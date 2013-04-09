@@ -10,14 +10,11 @@ gem 'devise'
 gem 'figaro'
 gem 'thin'
 
-gem 'prawn'
-gem 'rodf'
+gem 'prawn'		# pdf gen
+gem 'rodf'		# ods generator
 
 gem 'strong_parameters'		# remove when upto 4.
 gem 'turbolinks'
-
-# aws
-gem "asset_sync"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,7 +24,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-   gem 'zurb-foundation'
+  gem 'zurb-foundation'
+  #gem "asset_sync"  # aws
+  gem 'turbo-sprockets-rails3'
 end
 
 gem 'jquery-rails'
@@ -35,7 +34,7 @@ gem 'jquery-rails'
 gem 'rspec-rails', :group => [:development, :test]
 
 group :test do 
- gem 'cucumber-rails'
+ gem 'cucumber-rails', :require => false
  gem 'database_cleaner'
  gem 'factory_girl_rails'
 end

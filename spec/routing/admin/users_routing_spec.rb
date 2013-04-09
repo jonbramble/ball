@@ -35,5 +35,9 @@ describe Admin::UsersController do
       delete("/admin/users/1").should route_to(:controller => "admin/users", :action=> "destroy", :id => "1")
     end
 
+    it "routes to #index" do
+      get("/admin/users/summary").should route_to(:controller => "admin/users", :action=> "summary")
+    end
+
   end
 end

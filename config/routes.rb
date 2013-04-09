@@ -6,7 +6,7 @@ Ball::Application.routes.draw do
   #devise_for :admins, :class_name => "User"
 
   resources :users, :only => [:show] do
-    resources :meals
+    resources :meals, :only => [:edit, :update]
   end
 
   namespace :admin do 

@@ -11,5 +11,9 @@ describe HomeController do
       get("/home").should route_to(:controller => "home", :action=>"index")
     end
 
+    it "routes root to home#index" do
+      get("/").should route_to(:controller => "home", :action=>"index")
+    end
+
   end
 end

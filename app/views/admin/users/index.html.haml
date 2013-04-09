@@ -49,7 +49,7 @@
         %tr
           %td= user.name
           %td= user.email
-          %td=  true_false_icon(user.chosen)
+          %td=  true_false_icon(user.meal.chosen)
           %td= link_to 'Show', admin_user_path(user)
           %td= link_to 'Edit', edit_admin_user_path(user)
           %td= link_to 'Destroy', admin_user_path(user), :confirm => 'Are you sure?', :method => :delete

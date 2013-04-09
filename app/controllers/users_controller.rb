@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_access
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:meal).find(params[:id])
   end
 
  private 

@@ -8,7 +8,7 @@ class SummaryFormPdf < Prawn::Document
 
    #table = Array.new(users.count+1) { Array.new(6) }
    table = Array.new
-   table <<  ["Name", "Email","Vegetarian", "Coffee", "Wine","Allergies"]
+   table <<  ["Name", "Email","Vegetarian", "Coffee", "Wine","Allergies", "Friends"]
 
    users.each do |user| 
     table <<  [user.name, user.email, user.meal.vegetarian.to_s, user.meal.coffee.to_s, user.meal.wine.to_s, user.meal.allergies.to_s, user.meal.friends.to_s]

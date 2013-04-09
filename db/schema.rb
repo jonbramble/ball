@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409203554) do
+ActiveRecord::Schema.define(:version => 20130409213854) do
 
   create_table "meals", :force => true do |t|
     t.text     "allergies"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130409203554) do
     t.boolean  "vegetarian", :default => false
     t.boolean  "coffee",     :default => false
     t.text     "friends"
+    t.boolean  "chosen",     :default => false
   end
 
   create_table "users", :force => true do |t|
@@ -39,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20130409203554) do
     t.datetime "updated_at",                                :null => false
     t.string   "name"
     t.boolean  "admin",                  :default => false
-    t.boolean  "chosen",                 :default => false
     t.boolean  "admin_only",             :default => false
   end
 

@@ -80,7 +80,7 @@ class Admin::UsersController < ApplicationController
 	@veg_count = Meal.where(:vegetarian => :true).count
 	@guest_count = User.where(:admin_only => :false).count
 
-        @chosen_count = User.where(:chosen => :true).count
+        @chosen_count = Meal.where(:chosen => :true).count
         @coffee_count = Meal.where(:coffee => :true).count
 
 	respond_to do |format|

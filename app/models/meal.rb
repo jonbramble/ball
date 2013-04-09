@@ -6,12 +6,4 @@ class Meal < ActiveRecord::Base
 
   WINE = ["Red","White","No Wine Preference", "Soft Drink"]  
 
-  #after_update :set_chosen
-
-  #def set_chosen
-   #user = User.find(self.user_id)
-   #user.chosen = true
-   #user.save
-  #end
-
 end

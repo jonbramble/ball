@@ -4,22 +4,18 @@ html {
  -webkit-font-smoothing: antialiased;
 }
 
-body#pretty {
- background: #f7f7f7 url(image_path('back_fuzz_flip.jpg')) top center no-repeat;
-}
-
 #container {
   min-height: 749px;
+  &.pretty {
+   background: #eee url(image_path('back_fuzz_flip.jpg')) top center no-repeat;
+  }
+  &.plain {
+   background: #eee;
+  }
  } 
 
 .people {
-  margin-bottom: 20px;
-}
-
-@media #{$small} { 
- .people {
-  margin-bottom: 0px;
- }
+  margin-bottom: 50px;
 }
 
 .sign-in {

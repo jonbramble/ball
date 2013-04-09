@@ -93,10 +93,10 @@ class Admin::UsersController < ApplicationController
           format.ods do
 	   ods = SummaryFormOds.new()
 	   ods.create_sheet(@users, @veg_count, @guest_count, @coffee_count)
-	   file = "#{::Rails.root}/tmp/summary_#{Process.pid}";
+	   file = "#{Rails.root}/tmp/summary_#{Process.pid}";
 	   if ods.write_file file
-	   send_file file,  filename: "my-spreadsheet.ods", type: "application/ods", dispostion: "inline"
-	  end
+	     send_file file,  filename: "my-spreadsheet.ods", type: "application/ods", dispostion: "inline"
+	   end
           end
 
     	end

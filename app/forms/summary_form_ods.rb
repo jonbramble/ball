@@ -9,7 +9,7 @@ class SummaryFormOds
 
    def create_sheet(users, veg_count, guest_count, coffee_count)
        table = @spreadsheet.table 'Summary'
-       labels = %w(Name Email Vegetarian Coffee Wine Allergies)
+       labels = %w(Name Email Vegetarian Coffee Wine Allergies Friends)
 
        headers = table.row 
        labels.each do |label| 
@@ -24,6 +24,7 @@ class SummaryFormOds
          guestdata.cell user.meal.coffee
          guestdata.cell user.meal.wine
 	 guestdata.cell user.meal.allergies
+         guestdata.cell user.meal.friends
        end
 
 	totals = table.row
@@ -31,6 +32,7 @@ class SummaryFormOds
         totals.cell {}
         totals.cell veg_count, :type => :float
         totals.cell coffee_count, :type => :float
+	totals.cell {}
 	totals.cell {}
 	totals.cell {}
  	

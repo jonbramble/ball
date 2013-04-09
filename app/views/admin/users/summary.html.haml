@@ -13,6 +13,7 @@
         %th Coffee
         %th Wine
         %th Allergies
+        %th Friends
       - @users.each do |user|
         %tr
           %td
@@ -22,6 +23,7 @@
           %td= true_false_icon(user.meal.coffee)
           %td= user.meal.wine
           %td= user.meal.allergies
+          %td= user.meal.friends
       %tr
         %td Totals
         %td= @guest_count

@@ -6,5 +6,8 @@ FactoryGirl.define do
   sequence(:name){|n| "user name #{n}"}
   admin 'false'
   password 'auserpass'
+  chosen 'false'                
+  admin_only 'false'   
+  meal        
  end
 end 

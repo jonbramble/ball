@@ -68,10 +68,14 @@ Then /^receive a sign in message$/ do
   page.should have_content "You need to sign in or sign up before continuing."
 end
 
-
 Then /^I should see the title "([^"]*)"$/ do |text|
-  page.should have_selector('h1', :text => text)
+  page.should have_xpath('//h1|//h2',:text => text)
 end
+
+Then /^I should see the users page$/ do
+  current_path.should eql('/users/'+@user[:id].to_s)
+end
+
 
 Then /^enter valid login credentials$/ do
   sign_in

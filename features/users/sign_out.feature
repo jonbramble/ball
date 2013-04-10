@@ -1,5 +1,4 @@
 Feature: Sign out
-  To protect my website from unauthorized access
   A signed in user
   Should be able to sign out
 

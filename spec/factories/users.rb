@@ -5,8 +5,7 @@ FactoryGirl.define do
   sequence(:email) {|n| "email#{n}@factory.com" }
   sequence(:name){|n| "user name #{n}"}
   admin 'false'
-  password 'auserpass'
-  chosen 'false'                
+  password 'auserpass'             
   admin_only 'false'   
   meal        
  end

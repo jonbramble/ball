@@ -13,4 +13,8 @@ describe User do
     FactoryGirl.create(:user, :admin=>:true).should be_valid
   end
 
+   it "should succeed creating a new meal for the user Factory" do
+    expect { FactoryGirl.create(:user).meal}.not_to raise_error
+  end
+
 end

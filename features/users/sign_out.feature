@@ -5,6 +5,6 @@ Feature: Sign out
     Scenario: User signs out
       Given I am a signed in "user"
       When I sign out
-      Then I should see a signed out message
-      When I return to the site
-      Then I should be signed out
+      Then I should see the home page
+      And I should see a signed out message
+      

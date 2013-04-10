@@ -8,8 +8,15 @@ Feature: Admin users
     Scenario: Admin can see users
 	Then I should see a table of all users
         And I should see an add users link
+        And I should see summary links
 
      Scenario: Admin can see users
 	When I visit new users page
 	Then I should see an new user form
+
+     Scenario: Admin can add a new user
+        When I visit new users page
+        And I add a new guest
+        Then I should see a table of all users
+
 	

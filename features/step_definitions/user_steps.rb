@@ -26,16 +26,8 @@ When /^I visit the login page$/ do
   visit '/users/sign_in'
 end
 
-When /^I visit the admin page$/ do
-  visit '/admin/users'
-end
-
 When /^I sign out$/ do
   visit '/users/sign_out'
-end
-
-When /^I visit new users page$/ do
-  visit '/admin/users/new'
 end
 
 When /^I return to the site$/ do
@@ -76,7 +68,6 @@ Then /^I should see the users page$/ do
   current_path.should eql('/users/'+@user[:id].to_s)
 end
 
-
 Then /^enter valid login credentials$/ do
   sign_in
 end
@@ -86,8 +77,7 @@ Then /^I should see the home page$/ do
 end
 
 Then /^I should be signed out$/ do
-  #current_path.should eql('/users/sign_in')
-  pending
+ step "I should see the login page"
 end
 
 Then /^see an invalid login message$/ do
@@ -116,31 +106,6 @@ end
 
 Then /^I should not see an admin area link$/ do
   page.should_not have_xpath(".//a[contains(@href,'/admin/users')]")
-end
-
-Then /^I should see the admin page$/ do
-  current_path.should eql('/admin/users')
-end
-
-Then /^I should not see the admin page$/ do
-  current_path.should_not eql('/admin/users')
-end
-
-Then /^I should see a table of all users$/ do
-  current_path.should eql('/admin/users')
-  page.should have_selector('table') #pretty bad method of determining this
-  page.should have_selector('td', :text => @user[:email])
-  page.should have_selector('td', :text => @user[:name])
-end
-
-
-Then /^I should see an add users link$/ do
-  current_path.should eql('/admin/users')
-  page.should have_xpath(".//a[contains(@href,'/admin/users/new')]")
-end
-
-Then /^I should see an new user form$/ do
-  page.should have_selector('form')
 end
 
 Then /^I should see my name$/ do

@@ -8,7 +8,6 @@ general_foundicons.svg: 7fcef17fc2f31831330a6122ec3431b4
 general_foundicons.ttf: 0a39cb9e68ad1d16b3a3fa078a48b187
 general_foundicons.woff: efeedc1a8ae3ff58a7bab36ba9680068
 back_fuzz_flip.jpg: 139481786467709ab5155ceee5a66a0a
-back_fuzz_flip_1000.jpg: f58d664574f16ff49ca2c3308c9341c7
 claire.png: 92a9b1d8038d76cbe65c7f67bba9d343
 ivona.png: f32ffd9262b440ac46e4ab2c365e90cc
 jenny.png: 0523d43ff270d5097ded4ed523abf414
@@ -22,9 +21,10 @@ sasha.png: 2f12912e32c59f2ad0ae46ee47737ac4
 sophie.png: 3767215a17bfb4235a64167da455f0e5
 valeria.png: be66e3861ea22c227db292fd72ba9a97
 application.js: 3566b75157f9ebe09a86a2a4ff869712
-additional.css: 2bd57faa004df978d22fc650b718d898
-application.css: 3b406d34a8dc7b2bf436188286850a6f
+additional.css: 9c2a24f5cccdfdbf971d2a035150f951
+application.css: 7f2f1361815b91c7b83236ff04b24943
 home.css: 8553afa551f0d27b0454225d78b955bc
+ie8-grid-foundation-4.css: 445bfe59561fbb63bf74765a2b2e6950
 jquery.min.map: c9f1cdd631df08e10e30110e80419f1e
 vendor/custom.modernizr.js: 92aa8f05dae1e2023b4d10c8aa56878e
 vendor/zepto.js: 928e7c12e6732934ad126c9614fd1238

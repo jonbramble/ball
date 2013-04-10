@@ -26,7 +26,7 @@ group :assets do
 
   gem 'zurb-foundation'
   gem "asset_sync"  # aws
-  gem 'turbo-sprockets-rails3'
+  #gem 'turbo-sprockets-rails3'
 end
 
 gem 'jquery-rails'

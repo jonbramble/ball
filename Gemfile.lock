@@ -206,9 +206,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     ttfunk (1.0.3)
-    turbo-sprockets-rails3 (0.3.6)
-      railties (> 3.2.8, < 4.0.0)
-      sprockets (>= 2.0.0)
     turbolinks (1.1.0)
       coffee-rails
     tzinfo (0.3.37)
@@ -245,7 +242,6 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   strong_parameters
   thin
-  turbo-sprockets-rails3
   turbolinks
   uglifier (>= 1.0.3)
   zurb-foundation

@@ -9,13 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  * 
  *= require_self
- *= require general_enclosed_foundicons
- *= require general_foundicons
- *= require foundation_and_overrides
- *= require foundicon_override
- *= require home
- *= require additional
- *= require ie8-grid-foundation-4
+ *= require_tree .
  */
 
 

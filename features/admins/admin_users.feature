@@ -17,6 +17,13 @@ Feature: Admin users
      Scenario: Admin can add a new user
         When I visit new users page
         And I add a new guest
-        Then I should see a table of all users
+        And I should see a table of all users
+
+      Scenario: User receives a welcome email
+        When I visit new users page
+        And I add a new guest with name "A Guest" and email "guest@party.com"
+        Then "guest@party.com" should receive an email with subject "Astbury May Ball 2013"
+        When "guest@party.com" opens the email
+        Then they should see "Welcome A Guest" in the email body
 
 	

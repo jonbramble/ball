@@ -1,14 +1,17 @@
 class SummaryFormOds
 
-   attr_accessor :spreadsheet
-   @spreadsheet
+  attr_accessor :spreadsheet, :users, :veg_count, :guest_count, :coffee_count
 
-  def initialize()
-   @spreadsheet= ODF::Spreadsheet.new
+  def initialize(users, veg_count, guest_count, coffee_count)
+   @spreadsheet = ODF::Spreadsheet.new
+   @users = users
+   @veg_count = veg_count
+   @guest_count = guest_count
+   @coffee_count = coffee_count
   end
 
-   def create_sheet(users, veg_count, guest_count, coffee_count)
-       table = @spreadsheet.table 'Summary'
+   def create_sheet
+       table = spreadsheet.table 'Summary'
        labels = %w(Name Email Vegetarian Coffee Wine Allergies Friends)
 
        headers = table.row 
@@ -39,7 +42,7 @@ class SummaryFormOds
    end
 
    def write_file(filename)
-	@spreadsheet.write_to filename
+	spreadsheet.write_to filename
    end
 
 end

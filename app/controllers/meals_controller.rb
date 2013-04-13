@@ -17,7 +17,7 @@ class MealsController < ApplicationController
 
    if @meal.update_attributes(meal_params)
       UserMailer.update_meal(current_user).deliver
-      redirect_to user_path(current_user), :notice => 'Your meal options were successfully updated.'
+      redirect_to user_path(current_user), :notice => 'Your menu options were successfully updated.'
    else
       render :action => 'edit'
    end
@@ -27,7 +27,7 @@ class MealsController < ApplicationController
  private
  
  def meal_params
-  params.require(:meal).permit(:vegetarian,:wine, :coffee, :allergies)
+  params.require(:meal).permit(:vegetarian,:wine, :coffee, :allergies, :friends)
  end
 
  def authenticate_access

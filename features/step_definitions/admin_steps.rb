@@ -8,9 +8,15 @@ When /^I visit new users page$/ do
 end
 
 When /^I add a new guest$/ do
-  build_guest
+  build_guest("A Guest", "guest@partying.com")
   register_guest
 end
+
+When(/^I add a new guest with name "(.*?)" and email "(.*?)"$/) do |name,email|
+  build_guest(name,email)
+  register_guest
+end
+
 
 ##Then
 

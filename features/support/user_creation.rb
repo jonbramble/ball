@@ -4,8 +4,8 @@ def create_visitor
  @visitor ||={ :name => "Tester", :email=> "atester@example.com", :password => "auserpass", :password_confirmation => "auserpass" }
 end
 
-def build_guest
- @guest ||={ :name => "Guest", :email=> "aguest@example.com" }
+def build_guest(name,email)
+ @guest ||={ :name => name, :email=> email }
 end
 
 def create_user
@@ -17,7 +17,7 @@ end
 def create_admin
  create_visitor
  #delete_user
- @user = FactoryGirl.create(:user, email: @visitor[:email], admin: true)
+ @user = FactoryGirl.create(:user, email: @visitor[:email], admin: true, admin_only: true)
 end
 
 def sign_in

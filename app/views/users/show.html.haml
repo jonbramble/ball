@@ -9,6 +9,6 @@
 .row
   .small-10.large-6.columns
     - if @user.meal.chosen
-      = link_to "Edit your meal choices", edit_user_meal_path(@user), :class => "button"
+      = link_to "Edit your menu choices", edit_user_meal_path(@user), :class => "button"
     - else
-      = link_to "Enter your meal choices", edit_user_meal_path(@user), :class => "button"
+      = link_to "Enter your menu choices", edit_user_meal_path(@user), :class => "button"

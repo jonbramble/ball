@@ -34,6 +34,10 @@ When /^I return to the site$/ do
   visit root_path
 end
 
+When /^I visit the menu edit page$/ do
+  visit edit_user_meal_path(@user, @user.meal)
+end
+
 When /^enter no password$/ do
   @visitor = @visitor.merge(:password => "")
   sign_in
@@ -65,7 +69,8 @@ Then /^I should see the title "([^"]*)"$/ do |text|
 end
 
 Then /^I should see the users page$/ do
-  current_path.should eql('/users/'+@user[:id].to_s)
+  path = user_path(@user)
+  current_path.should eql(path)
 end
 
 Then /^enter valid login credentials$/ do
@@ -96,6 +101,10 @@ Then /^I should see a sign out link$/ do
   page.should have_xpath(".//a[contains(@href,'/users/sign_out')]")
 end
 
+Then /^I should see an edit menu link$/ do
+  page.should have_xpath("//a[text()='Enter your menu choices']/@href")
+end
+
 Then /^no sign in link$/ do
   page.should_not have_xpath(".//a[contains(@href,'/users/sign_in')]")
 end
@@ -111,6 +120,16 @@ end
 Then /^I should see my name$/ do
   page.should have_content "#{@user.name}"
 end
+
+Then /^I should see the menu$/ do
+  page.should have_content "Standard Menu"
+  page.should have_content "Vegetarian Menu"
+end
+
+Then /^I should see the menu edit form$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
 
 
 

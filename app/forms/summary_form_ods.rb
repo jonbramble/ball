@@ -19,6 +19,7 @@ class SummaryFormOds
          headers.cell label
        end
 
+	#need to make a new row
        guestdata = table.row
        users.each do |user|
          guestdata.cell user.name

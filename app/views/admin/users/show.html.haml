@@ -16,7 +16,7 @@
       = true_false_icon(@user.admin_only)
 
 
-- if @user.chosen #|| @user.admin_only
+- if @user.meal.chosen #|| @user.admin_only
   .row
     .large-6.columns
       %h6 Menu
@@ -32,11 +32,14 @@
       %p 
         Allergies:
         = @meal.allergies
+      %p
+        Friends:
+        = @meal.friends
 - else
   .row
     .large-6.columns
       %p
-        No Meal Chosen
+        Meal not chosen
 
 .row
   .large-6.columns

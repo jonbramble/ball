@@ -6,13 +6,13 @@
   <body>
     <h1>Hello, <%= @user.name %></h1>
     <p>Thank you for making your meal selections</p>
-    <p>Your menu is:</p>
+    <p>Your menu is</p>
     <p><%= vegetarian(@user.meal.vegetarian) %></p> 
     <p>And your choices were:</p>
     <p>Wine or soft drink: <%= @user.meal.wine%></p>
     <p>Coffee: <%= coffee(@user.meal.coffee)%></p> 
-    <p>Allergies/Intolerances: <%= @user.meal.allergies %></p> 
-    <p>Selected Friends: <%= @user.meal.friends %></p>
+    <p>Allergies/Intolerances: <%= allergies(@user.meal.allergies) %></p> 
+    <p>Selected Friends: <%= friends(@user.meal.friends) %></p>
 
   </body>
 </html>

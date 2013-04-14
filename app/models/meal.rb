@@ -4,6 +4,6 @@ class Meal < ActiveRecord::Base
  
   belongs_to :user
 
-  WINE = ["Red","White","No Wine Preference", "Soft Drink"]  
+  WINE = ["Red Wine","White Wine","No Wine Preference", "Soft Drink"]  
 
 end

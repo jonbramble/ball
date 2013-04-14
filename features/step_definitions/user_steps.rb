@@ -34,10 +34,6 @@ When /^I return to the site$/ do
   visit root_path
 end
 
-When /^I visit the menu edit page$/ do
-  visit edit_user_meal_path(@user, @user.meal)
-end
-
 When /^enter no password$/ do
   @visitor = @visitor.merge(:password => "")
   sign_in
@@ -48,12 +44,16 @@ When /^enter an invalid password$/ do
   sign_in
 end
 
-And /^I sign in with a wrong email$/ do
+When /^I sign in with a wrong email$/ do
  @visitor = @visitor.merge(:email => "atestu@example.com")
   sign_in
 end
 
 ## Then ##
+
+Then /^show me the page$/ do
+  save_and_open_page
+end
 
 Then /^I should see the login page$/ do
   current_path.should eql('/users/sign_in')
@@ -121,14 +121,7 @@ Then /^I should see my name$/ do
   page.should have_content "#{@user.name}"
 end
 
-Then /^I should see the menu$/ do
-  page.should have_content "Standard Menu"
-  page.should have_content "Vegetarian Menu"
-end
 
-Then /^I should see the menu edit form$/ do
-  pending # express the regexp above with the code you wish you had
-end
 
 
 

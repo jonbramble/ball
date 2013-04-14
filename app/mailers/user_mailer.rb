@@ -14,7 +14,7 @@ class UserMailer < ActionMailer::Base
 
   def update_meal(user)
     @user = user
-    mail(:to => user.email, :subject => "Astbury May Ball - Meal Choices Updated")
+    mail(:to => user.email, :subject => "Astbury May Ball - Menu Choices Updated")
   end
 
   #def mass_mail(user, subject)

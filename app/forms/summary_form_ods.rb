@@ -20,8 +20,8 @@ class SummaryFormOds
        end
 
 	#need to make a new row
-       guestdata = table.row
        users.each do |user|
+         guestdata = table.row
          guestdata.cell user.name
 	 guestdata.cell user.email
          guestdata.cell user.meal.vegetarian

@@ -1,12 +1,12 @@
 users:
- - email: <%= ENV['ADMIN_USER_JON'] %>  
-   name: "Jonathan Bramble" 
-   password: <%= ENV['JON_PASS'] %>  
+ - email: <%= ENV['ADMIN_USER_A'] %>  
+   name: "Admin UserA" 
+   password: <%= ENV['ADMIN_USER_A_PASS'] %>  
    admin: true
    admin_only: true
 
- - email: <%= ENV['ADMIN_USER_MEGAN'] %>
-   name: "Megan Hughes"
-   password: <%= ENV['MEGAN_PASS'] %>  
+ - email: <%= ENV['ADMIN_USER_B'] %>
+   name: "Admin UserB"
+   password: <%= ENV['ADMIN_USER_B_PASS'] %>  
    admin: true
    admin_only: false

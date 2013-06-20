@@ -1,0 +1,11 @@
+# Astbury Ball 2013
+
+A simple rails app to manage guest and menu choices at a Ball
+
+Admin interface with pdf generation
+
+It uses figaro to manage passwords in heroku for S3 and initial usernames 
+
+Set initial user names in db/users.yml
+
+
